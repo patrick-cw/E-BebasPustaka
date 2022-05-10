@@ -138,7 +138,7 @@
           </div>
         <div class="row flex center mb-5">
           <ul class="progressbar">
-                <li>Aktivasi</li>
+                <li class="active">Aktivasi</li>
                 <li>Verifikasi</li>
                 <li>Cetak MyITS Printing</li>
                 <li>Menerima Surat BP</li>
@@ -147,8 +147,8 @@
         <div class="row no-gutters flex-center mb-5">
         <div class="col-lg-8 text-center">
           <div class="card login-card">
-            <h4 class="mt-5 mb-3">Aktivasi</h4>
-            <p class="mb-5">Akun anda sedang dalam proses aktivasi, mohon menunggu hingga akun anda telah diaktivasi oleh admin.</p>
+            <h4 class="mt-5 mb-3">Akun Aktif</h4>
+            <p class="mb-5">Akun anda telah diaktivasi. Silahkan upload mandiri TA ke repository ITS</p>
           </div>
         </div>
         </div>

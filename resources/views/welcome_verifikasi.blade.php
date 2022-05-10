@@ -138,8 +138,8 @@
           </div>
         <div class="row flex center mb-5">
           <ul class="progressbar">
-                <li>Aktivasi</li>
-                <li>Verifikasi</li>
+                <li class="active">>Aktivasi</li>
+                <li class="active">Verifikasi</li>
                 <li>Cetak MyITS Printing</li>
                 <li>Menerima Surat BP</li>
             </ul>
@@ -147,8 +147,8 @@
         <div class="row no-gutters flex-center mb-5">
         <div class="col-lg-8 text-center">
           <div class="card login-card">
-            <h4 class="mt-5 mb-3">Aktivasi</h4>
-            <p class="mb-5">Akun anda sedang dalam proses aktivasi, mohon menunggu hingga akun anda telah diaktivasi oleh admin.</p>
+            <h4 class="mt-5 mb-3">Verifikasi</h4>
+            <p class="mb-5">Data yang telah anda upload telah diverifikasi. Lakukan pencetakan di MyITS Printing</p>
           </div>
         </div>
         </div>

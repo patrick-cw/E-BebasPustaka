@@ -28,6 +28,10 @@ use App\Http\Controllers\AdminController;
 // E-Bebas Pustaka
 Route::get('/test', function () { return view('test');});
 Route::get('/', function () { return view('welcome'); });
+Route::get('/active', function () { return view('welcome_aktivasi'); });
+Route::get('/verification', function () { return view('welcome_verifikasi'); });
+Route::get('/print', function () { return view('welcome_cetak'); });
+Route::get('/ebp', function () { return view('welcome_ebp'); });
 
 //Mahasiswa 
 Route::group(['middleware' => ['auth:mahasiswa']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
