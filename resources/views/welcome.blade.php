@@ -217,19 +217,6 @@
 
       </section>
       
-      <section class="pt-5" id="Download">
-        <div class="container">
-        <div class="row flex-center mb-5">
-            <div class="col-lg-8 text-center">
-              <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Download</h1>
-              <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
-
-              <p class="mx-auto">Download surat bebas pustaka.</p>
-              <iframe src="kp_depan/public/assets/img/POSTER T27.pptx.pdf" height=700px width=500px></iframe>
-            </div>
-        </div>
-        </div>
-      </section>
      
 
       <section class="pt-5">
