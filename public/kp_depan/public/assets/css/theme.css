@@ -18621,7 +18621,7 @@ ul li.playing .row span::before
   }
   .progressbar li {
       list-style-type: none;
-      width: 25%;
+      width: 20%;
       float: left;
       font-size: 12px;
       position: relative;

@@ -208,15 +208,15 @@
                 <li class="active">Aktivasi</li>
                 <li class="active">Validasi</li>
                 <li class="active">Penyerahan Hard Copy</li>
-                <li>Pengecekan Tanggungan</li>
+                <li class="active">Pengecekan Tanggungan</li>
                 <li>Menerima Surat BP</li>
             </ul>
         </div>
         <div class="row no-gutters flex-center mb-5">
         <div class="col-lg-8 text-center">
           <div class="card login-card">
-            <h4 class="mt-5 mb-3">Hard Copy Diterima</h4>
-            <p class="mb-5">Hard Copy sudah diterima perpustakaan. Pengecekan buku yang masih belum dikembalikan sedang dilakukan</p>
+            <h4 class="mt-5 mb-3">Tanggungan</h4>
+            <p class="mb-5">Sudah tidak ada tanggungan buku. Surat Bebas Pustaka sedang diproses</p>
           </div>
         </div>
         </div>

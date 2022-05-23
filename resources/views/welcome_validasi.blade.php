@@ -207,7 +207,7 @@
           <ul class="progressbar">
                 <li class="active">Aktivasi</li>
                 <li class="active">Validasi</li>
-                <li class="active">Penyerahan Hard Copy</li>
+                <li>Penyerahan Hard Copy</li>
                 <li>Pengecekan Tanggungan</li>
                 <li>Menerima Surat BP</li>
             </ul>
@@ -215,8 +215,8 @@
         <div class="row no-gutters flex-center mb-5">
         <div class="col-lg-8 text-center">
           <div class="card login-card">
-            <h4 class="mt-5 mb-3">Hard Copy Diterima</h4>
-            <p class="mb-5">Hard Copy sudah diterima perpustakaan. Pengecekan buku yang masih belum dikembalikan sedang dilakukan</p>
+            <h4 class="mt-5 mb-3">Validasi</h4>
+            <p class="mb-5">Data yang telah anda upload telah divalidasi. Lakukan pencetakan hardcopy TA dan kirim ke perpustakaan</p>
           </div>
         </div>
         </div>

@@ -6,7 +6,6 @@
 @endsection
 <!-- <link href="kp_depan/public/assets/css/new.css" rel="stylesheet" /> -->
 @section('content')
-
       <section class="py-0" id="Beranda">
         <div class="bg-holder d-none d-md-block" style="background-image:url(kp_depan/public/assets/img/illustrations/undraw_Envelope_re_f5j4.png);background-position:right;background-size:contain;">
         </div>
@@ -26,6 +25,21 @@
           </div>
         </div>
       </section>
+
+      <section class="pt-5" id="video">
+        <div class="container">
+        <div class="row flex-center mb-5">
+            <div class="col-lg-8 text-center">
+              <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Video Panduan</h1>
+              <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+              <p class="mx-auto">Video panduan E-Bebas Pustaka.</p>
+              <iframe class="ratio ratio-16x9" width="800" height="600" src="https://www.youtube.com/embed/qoQZfEo-2QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        </div>
+      </section>
+      
       <section class="pt-5" id="Tahapan">
       <div class="container">
       <div class="card login-card">
@@ -124,46 +138,7 @@
         </div>
         </div>
       </section>  
-
-      <section class="pt-5" id="Status">
-        <div class="container">
-        <div class="row flex-center mb-5">
-            <div class="col-lg-8 text-center">
-              <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
-              <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
-
-              <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
-              
-            </div>
-          </div>
-        <div class="row flex center mb-5">
-          <ul class="progressbar">
-                <li class="active">>Aktivasi</li>
-                <li class="active">Verifikasi</li>
-                <li>Cetak MyITS Printing</li>
-                <li>Menerima Surat BP</li>
-            </ul>
-        </div>
-        <div class="row no-gutters flex-center mb-5">
-        <div class="col-lg-8 text-center">
-          <div class="card login-card">
-            <h4 class="mt-5 mb-3">Verifikasi</h4>
-            <p class="mb-5">Data yang telah anda upload telah diverifikasi. Lakukan pencetakan di MyITS Printing</p>
-          </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </section>
       
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-
-      
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
       <section class="pt-5" id="Layanan">
 
         <div class="container">
@@ -216,6 +191,47 @@
         </div>
 
       </section>
+
+      <section class="pt-5" id="Status">
+        <div class="container">
+        <div class="row flex-center mb-5">
+            <div class="col-lg-8 text-center">
+              <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+              <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+              <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+              
+            </div>
+          </div>
+        <div class="row flex center mb-5">
+          <ul class="progressbar">
+                <li class="active">Aktivasi</li>
+                <li class="active">Validasi</li>
+                <li class="active">Penyerahan Hard Copy</li>
+                <li class="active">Pengecekan Tanggungan</li>
+                <li>Menerima Surat BP</li>
+            </ul>
+        </div>
+        <div class="row no-gutters flex-center mb-5">
+        <div class="col-lg-8 text-center">
+          <div class="card login-card">
+            <h4 class="mt-5 mb-3">Tanggungan</h4>
+            <p class="mb-5">Berikut adalah tanggungan buku yang belum dikembalikan</p>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </section>
+      
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+
+      
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
       
       
       <section class="pt-5">

@@ -9,11 +9,12 @@
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="/" id="home-btn">Beranda</a></li>
-             <li class="nav-item"><a class="nav-link" href="/#Tahapan" id="repo-btn">Tahapan</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#Status" id="repo-btn">Status</a></li>
+              <li class="nav-item"><a class="nav-link" href="/#video" id="repo-btn">Panduan</a></li>
+              <li class="nav-item"><a class="nav-link" href="/#Tahapan" id="repo-btn">Tahapan</a></li>
               <li class="nav-item"><a class="nav-link" href="/#Layanan" id="repo-btn">Layanan</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#Download" id="repo-btn">Download</a></li>
               @if (Auth::guard('mahasiswa')->check())
+                <li class="nav-item"><a class="nav-link" href="/#Status" id="repo-btn">Status</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Download" id="repo-btn">Download</a></li>
                 <li class="nav-item"><a class="nav-link" href="/" id="notif-btn"><i class="bi bi-bell-fill"></i> Notification</a></li>
                 <li class="nav-item"><a class="nav-link" href="/" id="profile-btn"><i class="bi bi-person-circle"></i> Username </a></li>
                 <li class="nav-item"><a class="nav-link" id="print-btn" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a></li>  
