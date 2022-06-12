@@ -15,5 +15,6 @@ class AdminSeeder extends Seeder
     public function run()
     {
         Admin::factory()->times(5)->create();
+        Admin::create(['nama' => 'Admin', 'email' => 'admin@admin.com', 'nip'=>5319395205946131, 'password' => bcrypt('admin')]);
     }
 }

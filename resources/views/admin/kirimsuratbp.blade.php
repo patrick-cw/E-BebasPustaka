@@ -8,10 +8,10 @@
   <div class="container-fluid position-relative px-7">
     <div class="row min-vh-75 mt-8 cols">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 btn-group mb-5 d-flex justify-content-center px-md-4 px-lg-9">
-        <a href="#" class="col btn btn-lg btn-primary active" aria-current="page">1. Aktivasi</a>
+        <a href="#" class="col btn btn-lg btn-primary">1. Aktivasi</a>
         <a href="#" class="col btn btn-lg btn-primary">2. Validasi TA</a>
         <a href="#" class="col btn btn-lg btn-primary">3. Terima TA</a>
-        <a href='/admin/dashboard/surat' class="col btn btn-lg btn-primary">4. Kirim Surat BP</a>
+        <a href='/admin/dashboard/surat' class="col btn btn-lg btn-primary active" aria-current="page">4. Kirim Surat BP</a>
       </div>
         
       <div class="card-body shadow-lg mt-n2">
@@ -33,7 +33,7 @@
                   <td>{{ $mhs->nrp }}</td>
                   <td>{{ $mhs->email }}</td>
                   <td><a type="button" class="btn btn-sm btn-primary btn-hover mx-1">Detail</a></td>
-                  <td><a data-bs-toggle="modal" data-bs-target="#aktivasiModal" class="btn btn-sm btn-primary btn-hover mx-1">Aktivasi</a></td>
+                  <td><a data-bs-toggle="modal" data-bs-target="#suratModal" class="btn btn-sm btn-primary btn-hover mx-1">Buat Surat</a></td>
                 </tr>
               @empty
                   <p>Tidak ada ajuan</p>
@@ -47,7 +47,7 @@
 
 </section>
 
-<div class="modal fade" id="aktivasiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="suratModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" style="max-width: 700px">
     <div class="modal-content" style="">
       <div class="modal-body text-center text-black fs-2">
@@ -55,7 +55,7 @@
       </div>
       <div class="modal-footer justify-content-center">
         <a type="button" class="rounded-1 btn btn-lg btn-secondary mx-2" data-bs-dismiss="modal">Batal</a>
-        <a type="button" class="rounded-1 btn btn-lg btn-primary mx-2" href="/admin/aktivasi/{{ $mhs->id }}">iya</a>
+        <a type="button" class="rounded-1 btn btn-lg btn-primary mx-2" id='button_surat' href="/admin/createWord/{{ $mhs->id }}">iya</a>
       </div>
     </div>
   </div>
@@ -122,6 +122,12 @@
   $(document).ready( function () {
       $('#adminTable').DataTable();
   } );
+  $('#suratModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+        var id = button.data('id');
+
+    $('#button_surat').attr("action", "{{ url('/admin/createWord') }}" + "/" + id);
+})
 </script>
   
 <!-- <section> close ============================-->

@@ -21,4 +21,11 @@ class AdminController extends Controller
       
       return view ('admin.index', compact(['admin', 'mahasiswa']));
   }    
+  public function suratBP()
+  {
+      $admin =  Auth::guard('admin')->user();
+      $mahasiswa = Mahasiswa::all();
+      
+      return view ('admin.kirimsuratbp', compact(['admin', 'mahasiswa']));
+  }    
 }

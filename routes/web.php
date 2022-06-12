@@ -15,6 +15,8 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MahasiswaAuthController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EBPIndoController;
+use App\Http\Controllers\EBPEnglishController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,7 +55,12 @@ Route::get('/admin/logout', [AdminAuthController::class, 'logout']); //
 Route::group(['middleware' => ['auth:admin']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
     //buat nyoba, name
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index'); // Pengguna - Halaman Form E-Thesis
+    Route::get('/admin/dashboard/surat', [AdminController::class, 'suratBP'])->name('admin.kirimsuratbp'); 
+    
 });
+Route::get('/createWord/eng', [EBPEnglishController::class,'createWordDoc']);
+Route::get('/createWord/ind', [EBPIndoController::class,'createWordDoc']);
+
 
 
 

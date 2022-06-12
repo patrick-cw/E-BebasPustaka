@@ -270,6 +270,7 @@
           <div class="card login-card">
             <h4 class="mt-5 mb-3">Menerima Surat Bebas Pustaka</h4>
             <p class="mb-5">Surat Bebas Pustaka sudah dapat didownload.</p>
+            
           </div>
         </div>
         </div>
@@ -294,9 +295,28 @@
               <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Download</h1>
               <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
 
-              <p class="mx-auto">Download surat bebas pustaka.</p>
-              <iframe src="kp_depan/public/assets/img/POSTER T27.pptx.pdf" height=700px width=500px></iframe>
+              <p class="mx-auto">Sebelum melakukan download, pilih bahasa surat yang diinginkan.</p>
+              
+            <select class="form-select"  name="bahasa" id="floatingSelect"style="height: 70px" aria-label="Floating label select example" required>
+              <option value='createWord/ind' >Bahasa Indonesia</option>
+              <option value="createWord/eng" >English</option>
+            </select>      
+            <br>      
+            <button class="btn btn-lg btn-primary hover-top rounded-1" style="border-radius:50px ;" id="btn">Download</button>
             </div>
+            <script type = "text/javascript">
+              var urlmenu = document.getElementById('floatingSelect');
+              var btn = document.getElementById("btn");
+              
+              // Set up a click event handling function for the button 
+              btn.addEventListener("click", function() {
+                // Confirmation of action for testing
+                console.log("Navigating to:" + urlmenu.value);
+                
+                // Open new window with correct URL
+                window.open( urlmenu.value );
+              });
+            </script>
         </div>
         </div>
       </section>
