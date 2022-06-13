@@ -15,8 +15,7 @@
               @if (Auth::guard('mahasiswa')->check())
                 <li class="nav-item"><a class="nav-link" href="/#Status" id="repo-btn">Status</a></li>
                 <li class="nav-item"><a class="nav-link" href="/#Download" id="repo-btn">Download</a></li>
-                <li class="nav-item"><a class="nav-link" href="/" id="notif-btn"><i class="bi bi-bell-fill"></i> Notification</a></li>
-                <li class="nav-item"><a class="nav-link" href="/" id="profile-btn"><i class="bi bi-person-circle"></i>Username </a></li>
+                <li class="nav-item"><a class="nav-link" href="/" id="profile-btn"><i class="bi bi-person-circle"></i>{{Auth::user()->nama}}</a></li>
                 <li class="nav-item"><a class="nav-link" id="print-btn" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a></li>  
               @elseif (Auth::guard('admin')->check())
                 <li class="nav-item"><a class="nav-link" id="print-btn" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a></li>

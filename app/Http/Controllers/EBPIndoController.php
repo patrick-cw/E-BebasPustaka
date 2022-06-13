@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Auth;
 class EBPIndoController extends Controller
 {
     public function createWordDoc(){
-       
+        $Nama = Auth::user()->nama;
+        $NRP = Auth::user()->nrp;
+        $Departemen = Auth::user()->departemen;
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
         $fontStyleName = 'rStyle';
         $phpWord->addFontStyle($fontStyleName, array('size' => 12));
@@ -26,9 +28,9 @@ class EBPIndoController extends Controller
         $section->addText('         Jabatan : Kepala Perpustakaan',$fontStyleName);
         $section->addText('         Alamat	  : Kampus ITS Sukolilo',$fontStyleName);
         $section->addText('Dengan ini menerangkan bahwa :',$fontStyleName);
-        $section->addText('         Nama           :',$fontStyleName);$section->addText('nama_user',$fontStyleName);
-        $section->addText('         NRP             :',$fontStyleName);$section->addText('nrp_user',$fontStyleName);
-        $section->addText('         Departemen :',$fontStyleName);$section->addText('dep_user',$fontStyleName);
+        $section->addText('         Nama           : '.$Nama,$fontStyleName);
+        $section->addText('         NRP             : '.$NRP,$fontStyleName);
+        $section->addText('         Departemen : '.$Departemen,$fontStyleName);$section->addText('dep_user',$fontStyleName);
         $section->addText('berdasarkan data kami, sudah memenuhi persyaratan Bebas Pustaka :',$fontStyleName);
         $section->addText('         1. Menyerahkan Hardcopy dan Softcopy TA/Tesis/Disertasi',$fontStyleName);
         $section->addText('         2. Bebas Tanggungan Pinjaman Koleksi dan Administrasi',$fontStyleName);

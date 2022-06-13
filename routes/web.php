@@ -30,15 +30,18 @@ use App\Http\Controllers\EBPEnglishController;
 // E-Bebas Pustaka
 Route::get('/test', function () { return view('test');});
 Route::get('/', function () { return view('welcome'); });
-Route::get('/active', function () { return view('welcome_aktivasi'); });
-Route::get('/verification', function () { return view('welcome_verifikasi'); });
-Route::get('/print', function () { return view('welcome_cetak'); });
-Route::get('/ebp', function () { return view('welcome_ebp'); });
+
 
 //Mahasiswa 
 Route::group(['middleware' => ['auth:mahasiswa']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
-    Route::get('/form', [FormController::class, 'create'])->name('mahasiswa.form'); //
-    Route::post('/form', [FormController::class, 'store'])->name('mahasiswa.ajukan'); //
+    Route::get('/', function () { return view('welcome'); });
+    Route::get('/active', function () { return view('welcome_aktivasi'); });
+    Route::get('/verification', function () { return view('welcome_validasi'); });
+    Route::get('/print', function () { return view('welcome_cetak'); });
+    Route::get('/ebp', function () { return view('welcome_ebp'); });
+    Route::get('/createWord/eng', [EBPEnglishController::class,'createWordDoc']);
+    Route::get('/createWord/ind', [EBPIndoController::class,'createWordDoc']);
+
 });
 
 Route::post('/register', [MahasiswaController::class, 'register']); //
@@ -58,8 +61,6 @@ Route::group(['middleware' => ['auth:admin']], function(){ // DI SCOPE INI PERLU
     Route::get('/admin/dashboard/surat', [AdminController::class, 'suratBP'])->name('admin.kirimsuratbp'); 
     
 });
-Route::get('/createWord/eng', [EBPEnglishController::class,'createWordDoc']);
-Route::get('/createWord/ind', [EBPIndoController::class,'createWordDoc']);
 
 
 

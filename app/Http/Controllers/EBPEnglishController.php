@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class EBPEnglishController extends Controller
 {
-    public function createWordDoc(){
-       
+    public function createWordDoc(Request $request){
+        $Nama = Auth::user()->nama;
+        $NRP = Auth::user()->nrp;
+        $Departemen = Auth::user()->departemen;
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
         $fontStyleName = 'rStyle';
         $phpWord->addFontStyle($fontStyleName, array('size' => 12));
@@ -26,9 +28,9 @@ class EBPEnglishController extends Controller
         $section->addText('         Position : Head of Library',$fontStyleName);
         $section->addText('         Address : Kampus ITS Sukolilo',$fontStyleName);
         $section->addText('With this letter explains that :',$fontStyleName);
-        $section->addText('         Name            :',$fontStyleName);
-        $section->addText('         NRP              :',$fontStyleName);
-        $section->addText('         Departement :',$fontStyleName);
+        $section->addText('         Name            : '.$Nama,$fontStyleName);
+        $section->addText('         NRP              : '.$NRP,$fontStyleName);
+        $section->addText('         Departement : '.$Departemen,$fontStyleName);
         $section->addText('by our data already fullfilled the requirements for library free:',$fontStyleName);
         $section->addText('         1. Submit hardcopy and softcopy of FP/Thesis/Disertation',$fontStyleName);
         $section->addText('         2. Free of Borrowed Books List',$fontStyleName);

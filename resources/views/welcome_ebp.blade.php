@@ -139,59 +139,6 @@
         </div>
       </section>  
       
-
-      <section class="pt-5" id="Layanan">
-
-        <div class="container">
-          <div class="row flex-center mb-5">
-            <div class="col-lg-8 text-center">
-              <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Layanan</h1>
-              <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
-
-              <p class="mx-auto">Berikut adalah layanan yang dapat diakses untuk memproses surat Bebas Pustaka.</p>
-            
-            </div>
-          </div>
-                <div class="row h-100 flex-start justify-content-center">
-                  <!-- card -->
-                  <div class="card col-6 col-sm-4 col-xl-2 mb-3 hover-top px-2" style="width: 15rem;">
-                    <a class="stretched-link" href="https://repository.its.ac.id/" target="_blank"></a>
-                      <img class="card-img-top mx-auto" src="kp_depan/public/assets/img/icons/e-thesis.png" style="height:200px; width:200px;" alt=""/>
-                      <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">Repository ITS</h5>
-                        <p class="card-text text-center">Link Repository ITS</p>
-                      </div>
-                  </div>
-                  <!-- card -->
-                  <div class="card col-6 col-sm-4 col-xl-2 mb-3 hover-top px-2" style="width: 15rem;">
-                    <a class="stretched-link" href="https://printing.its.ac.id/dashboard" target="_blank"></a>
-                    <img class="card-img-top mx-auto" src="kp_depan/public/assets/img/myits-printing-blue.png" style="height:200px; width:200px;" alt=""/>
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title text-center">MyITS Printing</h5>
-                      <p class="card-text text-center">Link MyITS Printing</p>
-                    </div>
-                  </div>
-                  <!-- card -->
-                  <div class="card col-6 col-sm-4 col-xl-2 mb-3 hover-top px-2" style="width: 15rem;">
-                    <a class="stretched-link" href="http://library.its.ac.id/spits/" target="_blank"></a>
-                      <img class="card-img-top mx-auto" src="kp_depan/public/assets/img/icons/literacy.png" style="height:200px; width:200px;" alt=""/>
-                      <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">SPITS</h5>
-                        <p class="card-text text-center">Link SPITS</p>
-                      </div>
-                  </div>
-                  <!-- <div class="card col-6 col-sm-4 col-xl-2 mb-3 hover-top px-2" style="width: 15rem;">
-                    <a class="stretched-link" href="/" target="_blank"></a>
-                      <img class="card-img-top mx-auto" src="kp_depan/public/assets/img/download.png" style="height:200px; width:200px;" alt=""/>
-                      <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">Surat Bebas Pustaka</h5>
-                        <p class="card-text text-center">Download Surat Bebas Pustaka</p>
-                      </div>
-                  </div> -->
-              </div> 
-        </div>
-
-      </section>
       <section class="pt-5" id="Layanan">
 
         <div class="container">
