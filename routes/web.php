@@ -34,7 +34,6 @@ Route::get('/', function () { return view('welcome'); });
 
 //Mahasiswa 
 Route::group(['middleware' => ['auth:mahasiswa']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
-    Route::get('/', function () { return view('welcome'); });
     Route::get('/active', function () { return view('welcome_aktivasi'); });
     Route::get('/verification', function () { return view('welcome_validasi'); });
     Route::get('/print', function () { return view('welcome_cetak'); });

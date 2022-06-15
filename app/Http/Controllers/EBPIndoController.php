@@ -30,7 +30,7 @@ class EBPIndoController extends Controller
         $section->addText('Dengan ini menerangkan bahwa :',$fontStyleName);
         $section->addText('         Nama           : '.$Nama,$fontStyleName);
         $section->addText('         NRP             : '.$NRP,$fontStyleName);
-        $section->addText('         Departemen : '.$Departemen,$fontStyleName);$section->addText('dep_user',$fontStyleName);
+        $section->addText('         Departemen : '.$Departemen,$fontStyleName);
         $section->addText('berdasarkan data kami, sudah memenuhi persyaratan Bebas Pustaka :',$fontStyleName);
         $section->addText('         1. Menyerahkan Hardcopy dan Softcopy TA/Tesis/Disertasi',$fontStyleName);
         $section->addText('         2. Bebas Tanggungan Pinjaman Koleksi dan Administrasi',$fontStyleName);
