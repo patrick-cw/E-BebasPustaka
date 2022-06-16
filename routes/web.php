@@ -33,7 +33,7 @@ Route::get('/', function () { return view('welcome'); });
 
 //Mahasiswa 
 Route::group(['middleware' => ['auth:mahasiswa']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
-    Route::get('/home', function () { return view('welcome'); });
+    Route::get('/home', function () { return view('home'); });
 });
 
 Route::post('/register', [MahasiswaController::class, 'register']); //
