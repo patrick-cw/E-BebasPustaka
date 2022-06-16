@@ -29,7 +29,7 @@ class MahasiswaAuthController extends Controller
         if (Auth::guard('mahasiswa')->attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/form');
+            return redirect()->intended('/active');
         }
 
         Alert::error('Gagal', 'Akun dengan kombinasi email & password tersebut tidak ditemukan');
