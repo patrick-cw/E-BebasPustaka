@@ -84,21 +84,7 @@
                         <div class="content">
                             <div class="body">
                                 <h2>Step Ketiga</h2>
-                                <p> Cek Status file. Berisi link repository jika valid dan catatan pustakawan jika tidak valid. </p>
-                            </div>
-
-                            <div class="icon">
-                                <img src="kp_depan/public/assets/img/check.svg" alt="Cek Status File" />
-                            </div>                
-                        </div>
-                    </div>
-                </li>
-                <li class="step-list__item">
-                    <div class="step-list__item__inner">
-                        <div class="content">
-                            <div class="body">
-                                <h2>Step Keempat</h2>
-                                <p>Lakukan pencetakan di MyITS Printing.</p>
+                                <p>Lakukan pencetakan Buku TA di MyITS Printing dan Kirim Hardcopynya ke Perpustakaan.</p>
                             </div>
 
                             <div class="icon">
@@ -111,7 +97,7 @@
                     <div class="step-list__item__inner">
                         <div class="content">
                             <div class="body">
-                                <h2>Step Kelima</h2>
+                                <h2>Step Keempat</h2>
                                 <p>Cek Status Pinjaman/tanggungan.</p>
                             </div>
 
@@ -125,7 +111,7 @@
                     <div class="step-list__item__inner">
                         <div class="content">
                             <div class="body">
-                                <h2>Step Keenam</h2>
+                                <h2>Step Kelima</h2>
                                 <p>Mahasiswa bisa melakukan download surat Bebas Pustaka.</p>
                             </div>
 
@@ -192,40 +178,209 @@
         </div>
 
       </section>
+    @if (Auth::guard('mahasiswa')->check())
+      @if (Auth::user()->status == 0)
+        <section class="pt-5" id="Status">
+          <div class="container">
+          <div class="row flex-center mb-5">
+              <div class="col-lg-8 text-center">
+                <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+                <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
 
-      <section class="pt-5" id="Status">
-        <div class="container">
-        <div class="row flex-center mb-5">
-            <div class="col-lg-8 text-center">
-              <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
-              <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+                <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+                
+              </div>
+            </div>
+          <div class="row flex center mb-5">
+            <ul class="progressbar">
+                  <li>Aktivasi</li>
+                  <li>Validasi</li>
+                  <li>Penyerahan Hard Copy</li>
+                  <li>Pengecekan Tanggungan</li>
+                  <li>Menerima Surat BP</li>
+              </ul>
+          </div>
+          <div class="row no-gutters flex-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="card login-card">
+              <h4 class="mt-5 mb-3">Aktivasi</h4>
+              <p class="mb-5">Akun anda sedang dalam proses aktivasi, mohon menunggu hingga akun anda telah diaktivasi oleh admin.</p>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </section>
+      @elseif(Auth::user()->status == 1)
+        <section class="pt-5" id="Status">
+          <div class="container">
+          <div class="row flex-center mb-5">
+              <div class="col-lg-8 text-center">
+                <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+                <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
 
-              <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+                <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+                
+              </div>
+            </div>
+          <div class="row flex center mb-5">
+            <ul class="progressbar">
+                  <li class="active">Aktivasi</li>
+                  <li>Validasi</li>
+                  <li>Penyerahan Hard Copy</li>
+                  <li>Pengecekan Tanggungan</li>
+                  <li>Menerima Surat BP</li>
+              </ul>
+          </div>
+          <div class="row no-gutters flex-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="card login-card">
+              <h4 class="mt-5 mb-3">Akun Aktif</h4>
+              <p class="mb-5">Akun anda telah diaktivasi. Silahkan upload mandiri TA ke repository ITS</p>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </section>
+      @elseif(Auth::user()->status == 2)
+        <section class="pt-5" id="Status">
+          <div class="container">
+          <div class="row flex-center mb-5">
+              <div class="col-lg-8 text-center">
+                <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+                <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+                <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+                
+              </div>
+            </div>
+          <div class="row flex center mb-5">
+            <ul class="progressbar">
+                  <li class="active">Aktivasi</li>
+                  <li class="active">Validasi</li>
+                  <li>Penyerahan Hard Copy</li>
+                  <li>Pengecekan Tanggungan</li>
+                  <li>Menerima Surat BP</li>
+              </ul>
+          </div>
+          <div class="row no-gutters flex-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="card login-card">
+              <h4 class="mt-5 mb-3">Validasi</h4>
+              <p class="mb-5">Data yang telah anda upload telah divalidasi. Lakukan pencetakan hardcopy TA dan kirim ke perpustakaan</p>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </section>
+      @elseif(Auth::user()->status == 3)
+        <section class="pt-5" id="Status">
+          <div class="container">
+          <div class="row flex-center mb-5">
+              <div class="col-lg-8 text-center">
+                <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+                <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+                <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+                
+              </div>
+            </div>
+          <div class="row flex center mb-5">
+            <ul class="progressbar">
+                  <li class="active">Aktivasi</li>
+                  <li class="active">Validasi</li>
+                  <li class="active">Penyerahan Hard Copy</li>
+                  <li>Pengecekan Tanggungan</li>
+                  <li>Menerima Surat BP</li>
+              </ul>
+          </div>
+          <div class="row no-gutters flex-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="card login-card">
+              <h4 class="mt-5 mb-3">Hard Copy Diterima</h4>
+              <p class="mb-5">Hard Copy sudah diterima perpustakaan. Pengecekan buku yang masih belum dikembalikan sedang dilakukan</p>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </section>
+        
+      @elseif(Auth::user()->status == 4)
+        <section class="pt-5" id="Status">
+          <div class="container">
+          <div class="row flex-center mb-5">
+              <div class="col-lg-8 text-center">
+                <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Status</h1>
+                <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+                <p class="mx-auto">Status proses mendapatkan surat bebas pustaka</p>
+                
+              </div>
+            </div>
+          <div class="row flex center mb-5">
+            <ul class="progressbar">
+                  <li class="active">Aktivasi</li>
+                  <li class="active">Validasi</li>
+                  <li class="active">Penyerahan Hard Copy</li>
+                  <li class="active">Pengecekan Tanggungan</li>
+                  <li class="active">Menerima Surat BP</li>
+              </ul>
+          </div>
+          <div class="row no-gutters flex-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="card login-card">
+              <h4 class="mt-5 mb-3">Menerima Surat Bebas Pustaka</h4>
+              <p class="mb-5">Surat Bebas Pustaka sudah dapat didownload.</p>
               
             </div>
           </div>
-        <div class="row flex center mb-5">
-          <ul class="progressbar">
-                <li>Aktivasi</li>
-                <li>Validasi</li>
-                <li>Penyerahan Hard Copy</li>
-                <li>Pengecekan Tanggungan</li>
-                <li>Menerima Surat BP</li>
-            </ul>
-        </div>
-        <div class="row no-gutters flex-center mb-5">
-        <div class="col-lg-8 text-center">
-          <div class="card login-card">
-            <h4 class="mt-5 mb-3">Aktivasi</h4>
-            <p class="mb-5">Akun anda sedang dalam proses aktivasi, mohon menunggu hingga akun anda telah diaktivasi oleh admin.</p>
           </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </section>
-      
+          </div>
+          </div>
+          </div>
+        </section>
+
+        <section class="pt-5" id="Download">
+          <div class="container">
+          <div class="row flex-center mb-5">
+              <div class="col-lg-8 text-center">
+                <h1 class="fw-bold fs-md-3 fs-lg-4 fs-xl-5">Download</h1>
+                <hr class="mx-auto text-primary my-4" style="height:3px; width:70px;" />
+
+                <p class="mx-auto">Sebelum melakukan download, pilih bahasa surat yang diinginkan.</p>
+                
+              <select class="form-select"  name="bahasa" id="floatingSelect"style="height: 70px" aria-label="Floating label select example" required>
+                <option value='createWord/ind' >Bahasa Indonesia</option>
+                <option value="createWord/eng" >English</option>
+              </select>      
+              <br>      
+              <button class="btn btn-lg btn-primary hover-top rounded-1" style="border-radius:50px ;" id="btn">Download</button>
+              </div>
+              <script type = "text/javascript">
+                var urlmenu = document.getElementById('floatingSelect');
+                var btn = document.getElementById("btn");
+                
+                // Set up a click event handling function for the button 
+                btn.addEventListener("click", function() {
+                  // Confirmation of action for testing
+                  console.log("Navigating to:" + urlmenu.value);
+                  
+                  // Open new window with correct URL
+                  window.open( urlmenu.value );
+                });
+              </script>
+          </div>
+          </div>
+        </section>
+      @endif
+    @endif
       <!-- ============================================-->
       <!-- <section> begin ============================-->
 

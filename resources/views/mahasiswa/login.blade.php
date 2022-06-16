@@ -30,7 +30,7 @@
                           <form action="/login" method="POST" enctype="multipart/form-data">
                             @csrf
                               <div class="form-floating mb-4 flex-center">
-                                <input type="text" name="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder=" " required >
+                                <input type="text" name="email"  class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder=" " required >
                                 <label for="floatingInput">Email</label>
                                 @error('email')
                                   <div class="invalid-feedback">
@@ -39,7 +39,7 @@
                                 @enderror
                               </div>  
                               <div class="form-floating mb-4 flex-center">
-                                <input type="password" name="password" value="{{old('password')}}" class="form-control @error('password') is-invalid @enderror" id="floatingInput" placeholder=" " required >
+                                <input type="password" name="password"  class="form-control @error('password') is-invalid @enderror" id="floatingInput" placeholder=" " required >
                                 <label for="floatingInput">Password</label>
                                 @error('password')
                                   <div class="invalid-feedback">

@@ -23,8 +23,8 @@ class MahasiswaController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'nrp' => 'required|numeric',
-            'email' => 'required|unique:mahasiswa,email',
+            'nrp' => 'required|numeric|unique:mahasiswa,nrp',
+            'email' => 'required|regex:/(.*)@gmail\.com/i|unique:mahasiswa,email',
             'telp' => 'required|numeric',
             'jenjang' => 'required',
             'fakultas' => 'required',

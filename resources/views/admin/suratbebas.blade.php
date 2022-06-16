@@ -8,69 +8,57 @@
   <div class="container-fluid position-relative px-7">
     <div class="row min-vh-75 mt-8 cols">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 btn-group mb-6 d-flex justify-content-center px-md-4 px-lg-9">
-      <a href="/admin/dashboard" class="col btn btn-lg btn-primary active" aria-current="page">1. Aktivasi</a>
+      <a href="/admin/dashboard" class="col btn btn-lg btn-primary">1. Aktivasi</a>
           <a href="/admin/validasi" class="col btn btn-lg btn-primary">2. Validasi</a>
           <a href="/admin/terimaTA" class="col btn btn-lg btn-primary">3. Terima TA</a>
           <a href="/admin/tanggungan" class="col btn btn-lg btn-primary">4. Tanggungan</a>
-          <a href="/admin/suratbebas" class="col btn btn-lg btn-primary">5. Surat BP</a>
+          <a href="/admin/suratbebas" class="col btn btn-lg btn-primary active" aria-current="page">5. Surat BP</a>
       </div>
         
-      <div class="card-body shadow-lg mb-4">
+      <div class="card-body shadow-lg mt-n2">
         <div class="table-responsive">
           <table class="table table-hover border-light table-bordered pt-3 pb-2" id="adminTable">
             <thead class="table-primary">
               <tr>
                 <th scope="col">Nama</th>
                 <th scope="col">NRP</th>
-                <th scope="col">Email</th>
-                <th scope="col">Detail Profil</th>
-                <th scope="col">Aktivasi</th>
+                <th scope="col">Kirim Surat</th>
               </tr>
             </thead>
             <tbody>
               @forelse ($mahasiswa as $mhs)
-                @if($mhs->status == 0)
+                @if($mhs->status == 3)
                   <tr>
                     <td>{{ $mhs->nama }}</td>
                     <td>{{ $mhs->nrp }}</td>
-                    <td>{{ $mhs->email }}</td>
                     <td>
-                      <a 
-                          href="javascript::void(0)"
-                          id="show-user"
-                          data-url="{{ route('mhs.detail', $mhs->id) }}"
-                          class="btn btn-md btn-secondary"
-                          >Detail</a>
-                    </td>       
-                    <td>
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1-{{ $mhs->id }}">Aktivasi</button>
-                      
-                      <!-- modal untuk aktivasi -->
-                      <div class="modal fade" id="modal1-{{ $mhs->id }}">
+                      <span style="font-size: 25px; color: green;">
+                        <i class="far fa-check-circle" role="button" data-bs-toggle="modal" data-bs-target="#modalsurat-{{ $mhs->id }}"></i>
+                      </span>
+                      <div class="modal fade" id="modalsurat-{{ $mhs->id }}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
-                              <p style="text-align: center; font-weight: bold; font-size: 16px">
-                                Apakah Anda yakin untuk mengaktivasi mahasiswa {{ $mhs->id }} ini? 
-                              </p>
+                                <p style="text-align: center; font-weight: bold; font-size: 16px">Apakah Anda yakin untuk mengirim surat kepada mahasiswa ini?</p>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
-                              <form action="{{ route('admin.aktivasi', $mhs->id) }}" method="post">
-                                  {{ csrf_field() }}
-                                  {{ method_field('put') }}
+                                <button type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">Tidak</button>
+                                <form action="{{ route('admin.suratbebas.setuju', $mhs->id) }}" method="post">
+                                  @method('PUT')
+                                  @csrf
                                   <button type="submit" class="btn btn-sm btn-success">Yakin</button>
-                              </form>
+                                </form>
                             </div>
                           </div>
                         </div>
                       </div>
                     </td>
-                  </tr>  
+                  </tr>
                 @endif
               @empty
                   <p>Tidak ada ajuan</p>
@@ -85,28 +73,35 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Detail Mahasiswa</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+
+<div class="modal fade" id="aktivasiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 700px">
+    <div class="modal-content" style="">
+      <div class="modal-body text-center text-black fs-2">
+        Apakah anda yakin untuk mengaktivasi akun ini?
       </div>
-      <div class="modal-body">
-        <p><strong>ID:</strong> <span id="mhs-id"></span></p>
-        <p><strong>Nama:</strong> <span id="mhs-nama"></span></p>
-        <p><strong>NRP:</strong> <span id="mhs-nrp"></span></p>
-        <p><strong>Email:</strong> <span id="mhs-email"></span></p>
-        <p><strong>No Telp:</strong> <span id="mhs-telp"></span></p>
-        <p><strong>Jenjang:</strong> <span id="mhs-jenjang"></span></p>
-        <p><strong>Departemen:</strong> <span id="mhs-departemen"></span></p>
-        <p><strong>Judul TA:</strong> <span id="mhs-judulTA"></span></p>
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="rounded-1 btn btn-lg btn-secondary mx-2" data-bs-dismiss="modal">Batal</a>
+        <a type="button" class="rounded-1 btn btn-lg btn-primary mx-2" href="/admin/aktivasi/{{ $mhs->id }}">iya</a>
       </div>
     </div>
   </div>
 </div>
+
+<div id="orderModal" class="modal hide fade" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3>Order</h3>
+
+  </div>
+  <div id="orderDetails" class="modal-body"></div>
+  <div id="orderItems" class="modal-body"></div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
+</section>
 
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">

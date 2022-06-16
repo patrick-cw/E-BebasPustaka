@@ -22,6 +22,7 @@ class Mahasiswa extends Authenticatable
         'fakultas',
         'departemen',
         'judulTA',
+        'status',
         'password',
      ];
 

@@ -31,16 +31,9 @@ use App\Http\Controllers\EBPEnglishController;
 Route::get('/test', function () { return view('test');});
 Route::get('/', function () { return view('welcome'); });
 
-
 //Mahasiswa 
 Route::group(['middleware' => ['auth:mahasiswa']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
-    Route::get('/active', function () { return view('welcome_aktivasi'); });
-    Route::get('/verification', function () { return view('welcome_validasi'); });
-    Route::get('/print', function () { return view('welcome_cetak'); });
-    Route::get('/ebp', function () { return view('welcome_ebp'); });
-    Route::get('/createWord/eng', [EBPEnglishController::class,'createWordDoc']);
-    Route::get('/createWord/ind', [EBPIndoController::class,'createWordDoc']);
-
+    Route::get('/home', function () { return view('welcome'); });
 });
 
 Route::post('/register', [MahasiswaController::class, 'register']); //
@@ -57,8 +50,20 @@ Route::get('/admin/logout', [AdminAuthController::class, 'logout']); //
 Route::group(['middleware' => ['auth:admin']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
     //buat nyoba, name
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index'); // Pengguna - Halaman Form E-Thesis
-    Route::get('/admin/dashboard/surat', [AdminController::class, 'suratBP'])->name('admin.kirimsuratbp'); 
-    
+    Route::put('/admin/dashboard/aktivasi/{id}', [AdminController::class, 'aktivasiMahasiswa'])->name('admin.aktivasi'); // Pengguna - Halaman Form E-Thesis
+    Route::get('/admin/detail/{id}', [AdminController::class, 'detail'])->name('mhs.detail');
+
+    Route::get('/admin/validasi', [AdminController::class, 'validasi']);
+    Route::put('/admin/validasi/a/{id}', [AdminController::class, 'validasiSetuju'])->name('mhs.validasi.setuju');
+    Route::put('/admin/validasi/d/{id}', [AdminController::class, 'validasiTolak'])->name('mhs.validasi.tolak');
+
+    Route::get('/admin/terimaTA', [AdminController::class, 'terimaTA'])->name('admin.terima');
+    Route::put('/admin/terimaTA/setuju/{id}', [AdminController::class, 'terimaTASetuju'])->name('admin.terima.setuju');
+
+    Route::get('/admin/tanggungan', [AdminController::class, 'tanggungan']);
+
+    Route::get('/admin/suratbebas', [AdminController::class, 'suratbebas'])->name('admin.suratbebas');
+    Route::get('/admin/suratbebas/setuju/{id}', [AdminController::class, 'suratbebasSetuju'])->name('admin.suratbebas.setuju');
 });
 
 

@@ -40,8 +40,8 @@
                                 @enderror
                               </div> 
                               <div class="form-floating mb-3 flex-center">
-                                <input type="text" name="nrp" value="{{old('nrp')}}" class="form-control @error('nrp') is-invalid @enderror" id="floatingInput" placeholder=" " required >
-                                <label for="floatingInput">NRP</label>
+                                <input type="text" name="nrp" value="{{old('nrp')}}" class="form-control @error('nrp') is-invalid @enderror" id="NRPInput" placeholder=" " required >
+                                <label for="NRPInput">NRP</label>
                                 @error('nrp')
                                     <div class="invalid-feedback">
                                     {{ $message }}
@@ -49,8 +49,8 @@
                                 @enderror
                               </div>
                               <div class="form-floating mb-3 flex-center">
-                                  <input type="text" name="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder=" " required >
-                                  <label for="floatingInput">E-mail</label>
+                                  <input type="text" name="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" id="EmailInput" placeholder=" " required >
+                                  <label for="EmailInput">E-mail</label>
                                   @error('email')
                                       <div class="invalid-feedback">
                                       {{ $message }}
@@ -58,16 +58,16 @@
                                   @enderror
                               </div>
                               <div class="form-floating mb-3 flex-center">
-                                  <input type="text" name="telp" value="{{old('telp')}}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder=" " required >
-                                  <label for="floatingInput">Nomor Telepon (WhatsApp)</label>
-                                  @error('email')
+                                  <input type="text" name="telp" value="{{old('telp')}}" class="form-control @error('email') is-invalid @enderror" id="TelpInput" placeholder=" " required >
+                                  <label for="TelpInput">Nomor Telepon (WhatsApp)</label>
+                                  @error('Telepon')
                                       <div class="invalid-feedback">
                                       {{ $message }}
                                       </div>
                                   @enderror
                               </div>
                               <div class="form-floating mb-3 flex-center">
-                                  <select class="form-select @error('jenjang') is-invalid @enderror" name="jenjang" value="{{old('jenjang')}}" id="floatingSelect"style="height: 70px" aria-label="Floating label select example" required>
+                                  <select class="form-select @error('jenjang') is-invalid @enderror" name="jenjang" value="{{old('jenjang')}}" id="JenjangInput"style="height: 70px" aria-label="Floating label select example" required>
                                     <option value= >Pilih Salah Satu</option>
                                     <option value="D3" >D3</option>
                                     <option value="D4" >D4</option>
@@ -76,7 +76,7 @@
                                     <option value="S3" >S3</option>
                                     <option value="Profesi" >Pilih Salah Satu</option>
                                   </select>
-                                  <label for="floatingSelect">Jenjang</label>
+                                  <label for="JenjangInput">Jenjang</label>
                                   @error('jenjang')
                                     <div class="invalid-feedback">
                                       {{ $message }}
@@ -84,7 +84,7 @@
                                   @enderror
                               </div>
                               <div class="form-floating mb-3 flex-center">
-                                <select class="form-select @error('fakultas') is-invalid @enderror" name="fakultas" value="{{old('fakultas')}}" id="floatingSelect"style="height: 70px" aria-label="Floating label select example" required>
+                                <select class="form-select @error('fakultas') is-invalid @enderror" name="fakultas" value="{{old('fakultas')}}" id="FakultasInput"style="height: 70px" aria-label="Floating label select example" required>
                                   <option value= >Pilih Salah Satu</option>
                                   <option value="Fakultas Sains dan Analitika Data">Fakultas Sains dan Analitika Data</option>
                                   <option value="Fakultas Teknologi Industri dan Rekayasa Sistem">Fakultas Teknologi Industri dan Rekayasa Sistem</option>
@@ -94,7 +94,7 @@
                                   <option value="Fakultas Desain Kreatif da Bisnis Digital">Fakultas Desain Kreatif da Bisnis Digital</option>
                                   <option value="Fakultas Vokasi">Fakultas Vokasi</option>
                                 </select>
-                                <label for="floatingSelect">Fakultas</label>
+                                <label for="FakultasInput">Fakultas</label>
                                   @error('fakultas')
                                     <div class="invalid-feedback">
                                       {{ $message }}
@@ -102,18 +102,18 @@
                                   @enderror
                               </div>
                               <div class="form-floating mb-3 flex-center">
-                                  <input type="text" name="departemen" value="{{old('departemen')}}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder=" " required >
-                                  <label for="floatingInput">Departemen</label>
-                                  @error('email')
+                                  <input type="text" name="departemen" value="{{old('departemen')}}" class="form-control @error('email') is-invalid @enderror" id="departemenInput" placeholder=" " required >
+                                  <label for="departemenInput">Departemen</label>
+                                  @error('departemen')
                                       <div class="invalid-feedback">
                                       {{ $message }}
                                       </div>
                                   @enderror
                               </div>
                               <div class="form-floating mb-3 flex-center">
-                                  <input type="text" name="judulTA" value="{{old('judulTA')}}" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder=" " required >
-                                  <label for="floatingInput">Judul TA</label>
-                                  @error('email')
+                                  <input type="text" name="judulTA" value="{{old('judulTA')}}" class="form-control @error('email') is-invalid @enderror" id="JudulInput" placeholder=" " required >
+                                  <label for="JudulInput">Judul TA</label>
+                                  @error('judul')
                                       <div class="invalid-feedback">
                                       {{ $message }}
                                       </div>
@@ -121,8 +121,8 @@
                               </div>
                               
                               <div class="form-floating mb-3 flex-center">
-                                <input type="password" name="password" value="{{old('password')}}" class="form-control @error('password') is-invalid @enderror" id="floatingInput" placeholder=" " required >
-                                <label for="floatingInput">Password</label>
+                                <input type="password" name="password" value="{{old('password')}}" class="form-control @error('password') is-invalid @enderror" id="PasswordInput" placeholder=" " required >
+                                <label for="PasswordInput">Password</label>
                                 @error('password')
                                   <div class="invalid-feedback">
                                     {{ $message }}
