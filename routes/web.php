@@ -34,6 +34,12 @@ Route::get('/', function () { return view('welcome'); });
 //Mahasiswa 
 Route::group(['middleware' => ['auth:mahasiswa']], function(){ // DI SCOPE INI PERLU AUTH SEMUA & DIKASIH NAME  
     Route::get('/home', function () { return view('home'); });
+    Route::get('/active', function () { return view('welcome_aktivasi'); });
+    Route::get('/verification', function () { return view('welcome_validasi'); });
+    Route::get('/print', function () { return view('welcome_cetak'); });
+    Route::get('/ebp', function () { return view('welcome_ebp'); });
+    Route::get('/createWord/eng', [EBPEnglishController::class,'createWordDoc']);
+    Route::get('/createWord/ind', [EBPIndoController::class,'createWordDoc']);
 });
 
 Route::post('/register', [MahasiswaController::class, 'register']); //

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class EBPEnglishController extends Controller
 {
     public function createWordDoc(Request $request){
+        $nomorSurat = Auth::user()->id;
+        $date = Carbon::now();
         $Nama = Auth::user()->nama;
         $NRP = Auth::user()->nrp;
         $Departemen = Auth::user()->departemen;
@@ -20,7 +23,7 @@ class EBPEnglishController extends Controller
 
         $section->addImage('E:\Github\E-BebasPustaka\resources\header.png',array('width'=>453, 'height'=>105));
         $section->addTitle('Library Free Letter of Statement', 1);
-        $section->addText('Number : ',$fontStyleName,array('align'=>'center'));
+        $section->addText('Number : '.$nomorSurat.'/EBP ITS/'.$date->month.'/'.$date->year,$fontStyleName,array('align'=>'center'));
         $section->addTextBreak(1);
         $section->addText('The undersigned below :',$fontStyleName);
         $section->addText('         Name 	  : Edy Suprayitno, S.S., M.Hum.',$fontStyleName);

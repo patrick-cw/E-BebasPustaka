@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class EBPIndoController extends Controller
 {
     public function createWordDoc(){
+        $nomorSurat = Auth::user()->id;
+        $date = Carbon::now();
         $Nama = Auth::user()->nama;
         $NRP = Auth::user()->nrp;
         $Departemen = Auth::user()->departemen;
@@ -20,7 +23,7 @@ class EBPIndoController extends Controller
 
         $section->addImage('E:\Github\E-BebasPustaka\resources\header.png',array('width'=>453, 'height'=>105));
         $section->addTitle('SURAT KETERANGAN BEBAS PUSTAKA', 1);
-        $section->addText('Nomor : ',$fontStyleName,array('align'=>'center'));
+        $section->addText('Nomor : '.$nomorSurat.'/EBP ITS/'.$date->month.'/'.$date->year,$fontStyleName,array('align'=>'center'));
         $section->addTextBreak(1);
         $section->addText('Yang bertanda tangan dibawah ini :',$fontStyleName);
         $section->addText('         Nama 	  : Edy Suprayitno, S.S., M.Hum.',$fontStyleName);
