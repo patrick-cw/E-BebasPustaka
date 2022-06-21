@@ -27,7 +27,7 @@
             </thead>
             <tbody>
               @forelse ($mahasiswa as $mhs)
-                @if($mhs->status == 3)
+                @if($mhs->status == 4)
                   <tr>
                     <td>{{ $mhs->nama }}</td>
                     <td>{{ $mhs->nrp }}</td>
@@ -72,7 +72,34 @@
 
 </section>
 
+<!-- Modal -->
 
+<div class="modal fade" id="aktivasiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 700px">
+    <div class="modal-content" style="">
+      <div class="modal-body text-center text-black fs-2">
+        Apakah anda yakin untuk mengaktivasi akun ini?
+      </div>
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="rounded-1 btn btn-lg btn-secondary mx-2" data-bs-dismiss="modal">Batal</a>
+        <a type="button" class="rounded-1 btn btn-lg btn-primary mx-2" href="/admin/aktivasi/{{ $mhs->id }}">iya</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="orderModal" class="modal hide fade" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3>Order</h3>
+
+  </div>
+  <div id="orderDetails" class="modal-body"></div>
+  <div id="orderItems" class="modal-body"></div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
 
 </section>
 

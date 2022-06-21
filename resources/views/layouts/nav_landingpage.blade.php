@@ -8,14 +8,14 @@
             aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/" id="home-btn">Beranda</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#video" id="repo-btn">Panduan</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#Tahapan" id="repo-btn">Tahapan</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#Layanan" id="repo-btn">Layanan</a></li>
               @if (Auth::guard('mahasiswa')->check())
-                <li class="nav-item"><a class="nav-link" href="/#Status" id="repo-btn">Status</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Download" id="repo-btn">Download</a></li>
-                <li class="nav-item"><a class="nav-link" href="/" id="profile-btn"><i class="bi bi-person-circle"></i>{{Auth::user()->nama}}</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/home" id="home-btn">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home#video" id="repo-btn">Panduan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home#Tahapan" id="repo-btn">Tahapan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home#Layanan" id="repo-btn">Layanan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home#Status" id="repo-btn">Status</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home#Download" id="repo-btn">Download</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home" id="profile-btn"><i class="bi bi-person-circle"></i>{{Auth::user()->nama}}</a></li>
                 <li class="nav-item"><a class="nav-link" id="print-btn" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a></li>  
               @elseif (Auth::guard('admin')->check())
                 <li class="nav-item"><a class="nav-link" id="print-btn" data-bs-toggle="modal" data-bs-target="#logoutModal" href="">Logout</a></li>

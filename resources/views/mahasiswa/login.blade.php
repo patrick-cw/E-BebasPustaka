@@ -39,7 +39,7 @@
           </form>
           <h5 class="my-3"><span class="mx-2">Belum punya akun?</span></h5>
           <div class="d-grid gap-2">
-              <a class="btn btn-primary hover-top rounded-1" href="/register">Buat Akun</a>
+              <a class="btn btn-outline-primary hover-top rounded-1" href="/register">Buat Akun</a>
           </div>
           
         </div>

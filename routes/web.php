@@ -61,17 +61,12 @@ Route::group(['middleware' => ['auth:admin']], function(){ // DI SCOPE INI PERLU
     Route::put('/admin/terimaTA/setuju/{id}', [AdminController::class, 'terimaTASetuju'])->name('admin.terima.setuju');
 
     Route::get('/admin/tanggungan', [AdminController::class, 'tanggungan']);
-
+    Route::put('/admin/tanggungan/a/{id}', [AdminController::class, 'tanggunganSetuju'])->name('admin.tanggungan.setuju');
+    Route::put('/admin/tanggungan/d/{id}', [AdminController::class, 'tanggunganTolak'])->name('admin.tanggungan.tolak');
+    
     Route::get('/admin/suratbebas', [AdminController::class, 'suratbebas'])->name('admin.suratbebas');
-    Route::get('/admin/suratbebas/setuju/{id}', [AdminController::class, 'suratbebasSetuju'])->name('admin.suratbebas.setuju');
+    Route::put('/admin/suratbebas/setuju/{id}', [AdminController::class, 'suratbebasSetuju'])->name('admin.suratbebas.setuju');
 });
-
-
-
-
-
-
-
 
 
 // -------------------------------------------------KP Mas Danu-----------------------------------------
